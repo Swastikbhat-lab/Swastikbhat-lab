@@ -75,7 +75,7 @@ Outperformed GPT-4 level baselines on TruthfulQA by implementing an unsupervised
 
 <div align="center">
 
-📫 **s.bhat@gwu.edu** &nbsp;|&nbsp; MS Computer Science @ GWU &nbsp;|&nbsp; Arlington, VA
+📫 **s.bhat@gwu.edu** &nbsp;|&nbsp; MS Computer Science @ GWU &nbsp;|&nbsp; Arlington, VA &nbsp;|&nbsp; [🌐 Portfolio](https://wise-white-iebpvfefdq.edgeone.app/)
 
 [![](https://komarev.com/ghpvc/?username=Swastikbhat-lab&color=7b68ee&style=flat)](https://github.com/Swastikbhat-lab)
 
