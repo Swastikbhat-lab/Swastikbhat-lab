@@ -6,24 +6,24 @@
 
 ---
 
-### 🔨 Currently working on
+###  Currently working on
 A fleet intelligence agent system built on LangGraph, extending the multi-agent architecture patterns I used in CodeGuardian into operations and logistics domains.
 
-### 🤝 Looking to collaborate on
+###  Looking to collaborate on
 Applied AI and ML projects where the output actually changes a business decision. Agentic systems, time series forecasting, real world data pipelines.
 
-### 📖 Currently learning
+###  Currently learning
 Scaling multi-agent systems beyond prototype stage and deeper reinforcement learning fundamentals.
 
-### 💬 Ask me about
+###  Ask me about
 Building LangGraph pipelines from scratch, EEG signal classification, wind turbine fault detection, or how I turned messy MISO/PJM interconnection queue data into an energy project risk model.
 
-### ⚡ Fun fact
+###  Fun fact
 Outperformed GPT-4 level baselines on TruthfulQA by implementing an unsupervised label elicitation algorithm directly from a 2025 paper. No fine-tuning, no labeled data.
 
 ---
 
-## 🚀 What I Build
+##  What I Build
 
 | Project | What it does | Stack |
 |:---|:---|:---|
@@ -33,7 +33,7 @@ Outperformed GPT-4 level baselines on TruthfulQA by implementing an unsupervised
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 **Languages**
 
@@ -61,7 +61,7 @@ Outperformed GPT-4 level baselines on TruthfulQA by implementing an unsupervised
 
 ---
 
-## 📊 GitHub Stats
+##  GitHub Stats
 
 <div align="center">
 
@@ -75,7 +75,7 @@ Outperformed GPT-4 level baselines on TruthfulQA by implementing an unsupervised
 
 <div align="center">
 
-📫 **s.bhat@gwu.edu** &nbsp;|&nbsp; MS Computer Science @ GWU &nbsp;|&nbsp; Arlington, VA &nbsp;|&nbsp; [🌐 Portfolio](https://wise-white-iebpvfefdq.edgeone.app/)
+ **s.bhat@gwu.edu** &nbsp;|&nbsp; MS Computer Science @ GWU &nbsp;|&nbsp; Arlington, VA &nbsp;|&nbsp; [🌐 Portfolio](https://wise-white-iebpvfefdq.edgeone.app/)
 
 [![](https://komarev.com/ghpvc/?username=Swastikbhat-lab&color=7b68ee&style=flat)](https://github.com/Swastikbhat-lab)
 
