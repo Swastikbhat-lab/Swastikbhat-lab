@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="178" height="36" viewBox="0 0 178 36" font-family="ui-monospace,'Cascadia Mono',Consolas,'Courier New',monospace">
+  <rect x="0.75" y="0.75" width="176.5" height="34.5" rx="17.25" fill="#ffffff" stroke="#d0d7de" stroke-width="1.5"/>
+  <g transform="translate(18 10)"><path d="M1.5 4.25h13v7.5a1 1 0 0 1-1 1h-11a1 1 0 0 1-1-1v-7.5z" fill="none" stroke="#1f2328" stroke-width="1.5" stroke-linejoin="round"/><path d="M1.75 4.75 8 9.5l6.25-4.75" fill="none" stroke="#1f2328" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></g>
+  <text x="104" y="22" text-anchor="middle" font-size="13" fill="#1f2328">s.bhat@gwu.edu</text>
+</svg>

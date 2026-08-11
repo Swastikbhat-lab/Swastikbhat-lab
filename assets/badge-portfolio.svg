@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="138" height="36" viewBox="0 0 138 36" font-family="ui-monospace,'Cascadia Mono',Consolas,'Courier New',monospace">
+  <rect x="0.75" y="0.75" width="136.5" height="34.5" rx="17.25" fill="#ffffff" stroke="#d0d7de" stroke-width="1.5"/>
+  <g transform="translate(18 10)"><path d="M5.25 10.75 10.75 5.25 M5.5 5.25h5.25v5.25" fill="none" stroke="#1f2328" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></g>
+  <text x="84" y="22" text-anchor="middle" font-size="13" fill="#1f2328">portfolio</text>
+</svg>

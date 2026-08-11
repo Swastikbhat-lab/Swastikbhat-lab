@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="616" viewBox="0 0 1200 616" font-family="ui-monospace,'Cascadia Mono',Consolas,'Courier New',monospace">
+  <defs>
+    <linearGradient id="bar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#1f2328"/>
+      <stop offset="0.5" stop-color="#57606a"/>
+      <stop offset="1" stop-color="#1f2328"/>
+      <animate attributeName="x1" values="0;1;0" dur="9s" repeatCount="indefinite"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="616" fill="#ffffff"/>
+
+  <rect x="40" y="36" width="1120" height="560" rx="14" fill="#f6f8fa" stroke="#d0d7de" stroke-width="2"/>
+  <rect x="40" y="36" width="1120" height="46" rx="14" fill="#eef1f4"/>
+  <rect x="40" y="64" width="1120" height="18" fill="#eef1f4"/>
+  <circle cx="78" cy="59" r="6.5" fill="#afb8c1"/>
+  <circle cx="99" cy="59" r="6.5" fill="#afb8c1"/>
+  <circle cx="120" cy="59" r="6.5" fill="#afb8c1"/>
+  <text x="600" y="65" text-anchor="middle" font-size="15" fill="#57606a">swastik@github — ~/profile</text>
+
+  <text x="70" y="122" font-size="18" fill="#57606a">$ whoami</text>
+  <text x="70" y="152" font-size="18" fill="#1f2328">swastik — ai/ml engineer building things that decide things</text>
+  <text x="70" y="182" font-size="18" fill="#57606a">$ pwd</text>
+  <text x="70" y="212" font-size="18" fill="#1f2328">~/ms-cs · gwu · arlington, va</text>
+  <text x="70" y="242" font-size="18" fill="#57606a">$ cat now</text>
+  <text x="70" y="272" font-size="18" fill="#1f2328">shipping  → multi-agent code review (CodeGuardian) · self-healing scrapers (scrape-heal)</text>
+  <text x="70" y="302" font-size="18" fill="#1f2328">learning  → scaling multi-agent systems past the prototype · RL fundamentals</text>
+  <text x="70" y="332" font-size="18" fill="#1f2328">open to   → applied AI/ML where the output changes a business decision</text>
+  <text x="70" y="362" font-size="18" fill="#57606a">$ cat proof</text>
+  <text x="70" y="392" font-size="18" fill="#1f2328">✗ no fine-tuning, no labeled data — beat GPT-4-level baselines on TruthfulQA</text>
+  <text x="70" y="422" font-size="18" fill="#1f2328">  with an unsupervised label elicitation algorithm straight from a 2025 paper</text>
+  <text x="70" y="452" font-size="18" fill="#1f2328">✓ 8-agent code review system — human review time −60%, coverage up to 87%</text>
+  <text x="70" y="482" font-size="18" fill="#1f2328">✓ wind-farm digital twin — faults caught before downtime · 0.91 AUC</text>
+  <text x="70" y="512" font-size="18" fill="#57606a">$ cat ask_me</text>
+  <text x="70" y="542" font-size="18" fill="#1f2328">langgraph pipelines · EEG signal classification · turbine fault detection · energy project risk models</text>
+
+  <rect x="70" y="566" width="10" height="20" fill="#1f2328">
+    <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
+  </rect>
+
+  <rect x="40" y="592" width="1120" height="4" rx="2" fill="url(#bar)"/>
+</svg>

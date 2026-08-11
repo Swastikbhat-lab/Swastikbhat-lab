@@ -1,31 +1,31 @@
 /**
- * Generate assets/header-v4.svg, assets/footer.svg, assets/achievements.svg,
- * and preview.html (with the SVGs inlined so the Freebuff preview works
- * without a server).
+ * Generate assets/header-v5.svg, assets/footer-v2.svg, assets/achievements-v2.svg,
+ * assets/stats-v2.svg, the light badge pills (assets/badge-*.svg), and preview.html
+ * (with the SVGs inlined so the Freebuff preview works without a server).
  *
- * Monochrome, SMIL typewriter animation, no scripts — GitHub-safe.
+ * Light monochrome, SMIL typewriter animation, no scripts — GitHub-safe.
  * Run: node scripts/gen-profile-svgs.mjs
  */
-import { writeFileSync, readFileSync } from 'node:fs';
+import { writeFileSync } from 'node:fs';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const assets = resolve(__dirname, '..', 'assets');
 
-// Monochrome palette — the whole profile is BnW now.
+// Light monochrome palette — GitHub light-mode tokens, so the SVGs sit
+// seamlessly on the white README page instead of floating as black boxes.
 const P = {
-  bg: '#010409',
-  win: '#0d1117',
-  winBorder: '#30363d',
-  titleBar: '#161b22',
-  dim: '#8b949e',
-  text: '#e6edf3',
-  dot: '#3d444d',
+  bg: '#ffffff',
+  win: '#f6f8fa',
+  winBorder: '#d0d7de',
+  titleBar: '#eef1f4',
+  dim: '#57606a',
+  text: '#1f2328',
+  dot: '#afb8c1',
 };
 
 const FONT = 18;
-const CHAR_W = 10.5;
 const STEP = 30;
 const X0 = 70;
 const TITLE_BAR_H = 46;
@@ -60,9 +60,9 @@ function session({ title, lines, winY = 36 }) {
     svg: `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" font-family="ui-monospace,'Cascadia Mono',Consolas,'Courier New',monospace">
   <defs>
     <linearGradient id="bar" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="#e6edf3"/>
-      <stop offset="0.5" stop-color="#8b949e"/>
-      <stop offset="1" stop-color="#e6edf3"/>
+      <stop offset="0" stop-color="${P.text}"/>
+      <stop offset="0.5" stop-color="${P.dim}"/>
+      <stop offset="1" stop-color="${P.text}"/>
       <animate attributeName="x1" values="0;1;0" dur="9s" repeatCount="indefinite"/>
     </linearGradient>
   </defs>
@@ -91,6 +91,9 @@ ${rows.join('\n')}
 }
 
 // ---- header: the full about session ---------------------------------------
+// Cache-busted name: camo (GitHub's image proxy) served stale bytes of the old
+// animated header forever because the URL never changed. A rename forces a
+// fresh fetch — same reason this became v4, and now v5 for the light theme.
 const header = session({
   title: 'swastik@github — ~/profile',
   lines: [
@@ -111,10 +114,7 @@ const header = session({
     { t: 'out', s: 'langgraph pipelines · EEG signal classification · turbine fault detection · energy project risk models' },
   ],
 });
-// Cache-busted name: camo (GitHub's image proxy) served stale bytes of the
-// old animated header forever because the URL never changed. A rename forces
-// a fresh fetch.
-writeFileSync(resolve(assets, 'header-v4.svg'), header.svg);
+writeFileSync(resolve(assets, 'header-v5.svg'), header.svg);
 
 // ---- footer: $ cat contact -------------------------------------------------
 const footer = session({
@@ -127,7 +127,7 @@ const footer = session({
     { t: 'out', s: 'motto → an output that changes a business decision beats a benchmark that impresses nobody' },
   ],
 });
-writeFileSync(resolve(assets, 'footer.svg'), footer.svg);
+writeFileSync(resolve(assets, 'footer-v2.svg'), footer.svg);
 
 // ---- achievements strip (replaces the dead github-profile-trophy service) ---
 // Self-hosted, monochrome, real numbers — cannot break like the third-party
@@ -149,7 +149,7 @@ function achievements() {
   const inner = totalW - 80; // 40 margin each side
   const chipW = Math.floor((inner - gap * (items.length - 1)) / items.length);
   const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${totalW}" height="${chipY + chipH + 24}" viewBox="0 0 ${totalW} ${chipY + chipH + 24}" font-family="ui-monospace,'Cascadia Mono',Consolas,'Courier New',monospace">
-  <rect width="${totalW}" height="${chipY + chipH + 24}" fill="#010409"/>
+  <rect width="${totalW}" height="${chipY + chipH + 24}" fill="${P.bg}"/>
 ${items.map((it, i) => {
     const x = 40 + i * (chipW + gap);
     const cx = x + chipW / 2;
@@ -158,9 +158,9 @@ ${items.map((it, i) => {
     const rest = t1 === -1 ? '' : it.slice(t1);
     return `  <g opacity="0">
     <animate attributeName="opacity" from="0" to="1" begin="${(0.4 + i * 0.35).toFixed(1)}s" dur="0.5s" fill="freeze"/>
-    <rect x="${x}" y="${chipY}" width="${chipW}" height="${chipH}" rx="12" fill="#161b22" stroke="#30363d" stroke-width="1.5"/>
-    <text x="${cx}" y="${chipY + 38}" text-anchor="middle" font-size="${font}" font-weight="bold" fill="#e6edf3">${esc(head)}</text>
-    <text x="${cx}" y="${chipY + 18}" text-anchor="middle" font-size="${font - 4}" fill="#8b949e">${esc(rest)}</text>
+    <rect x="${x}" y="${chipY}" width="${chipW}" height="${chipH}" rx="12" fill="${P.win}" stroke="${P.winBorder}" stroke-width="1.5"/>
+    <text x="${cx}" y="${chipY + 38}" text-anchor="middle" font-size="${font}" font-weight="bold" fill="${P.text}">${esc(head)}</text>
+    <text x="${cx}" y="${chipY + 18}" text-anchor="middle" font-size="${font - 4}" fill="${P.dim}">${esc(rest)}</text>
   </g>`;
   }).join('\n')}
 </svg>
@@ -169,7 +169,7 @@ ${items.map((it, i) => {
 }
 
 const achievementsSvg = achievements();
-writeFileSync(resolve(assets, 'achievements.svg'), achievementsSvg);
+writeFileSync(resolve(assets, 'achievements-v2.svg'), achievementsSvg);
 
 // ---- curated stats readout (replaces the raw GitHub cards) ------------------
 // The github-readme-stats cards exposed raw numbers that read badly for a
@@ -186,7 +186,70 @@ const stats = session({
     { t: 'out', s: 'languages          Python · Jupyter · TypeScript · JavaScript' },
   ],
 });
-writeFileSync(resolve(assets, 'stats.svg'), stats.svg);
+writeFileSync(resolve(assets, 'stats-v2.svg'), stats.svg);
+
+// ---- badge pills (replace shields.io: it cannot do dark text on light) ------
+// Hand-rolled pills that match the light terminal — white, thin border, black
+// text, crisp 16px glyphs. Same BnW language as the rest of the profile.
+const GLYPHS = {
+  mail: `<path d="M1.5 4.25h13v7.5a1 1 0 0 1-1 1h-11a1 1 0 0 1-1-1v-7.5z" fill="none" stroke="#1f2328" stroke-width="1.5" stroke-linejoin="round"/><path d="M1.75 4.75 8 9.5l6.25-4.75" fill="none" stroke="#1f2328" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>`,
+  arrow: `<path d="M5.25 10.75 10.75 5.25 M5.5 5.25h5.25v5.25" fill="none" stroke="#1f2328" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>`,
+  github: `<path fill="#1f2328" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>`,
+};
+
+function badgeSvg({ label, glyph, slug }) {
+  const fontSize = 13;
+  const charW = 8;
+  const textW = label.length * charW;
+  const hasIcon = Boolean(glyph);
+  const pad = 18; // symmetric padding on both sides
+  const h = 36;
+  // Layout is computed so the whole block (glyph + gap + text) is centered in
+  // the pill, not just the text: text-only pills get text centered directly.
+  let w, textX, glyphX;
+  if (hasIcon) {
+    const blockW = 16 + 14 + textW; // glyph + gap + text
+    w = blockW + 2 * pad;
+    glyphX = pad; // glyph spans pad..pad+16
+    textX = pad + 16 + 14 + textW / 2; // anchor middle of the text run
+  } else {
+    w = textW + 2 * pad;
+    textX = w / 2;
+    glyphX = 0;
+  }
+  const glyphSvg = glyph ? `  <g transform="translate(${glyphX} 10)">${glyph}</g>` : '';
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" font-family="ui-monospace,'Cascadia Mono',Consolas,'Courier New',monospace">
+  <rect x="0.75" y="0.75" width="${w - 1.5}" height="${h - 1.5}" rx="${h / 2 - 0.75}" fill="#ffffff" stroke="${P.winBorder}" stroke-width="1.5"/>
+${glyphSvg}
+  <text x="${textX}" y="22" text-anchor="middle" font-size="${fontSize}" fill="${P.text}">${esc(label)}</text>
+</svg>
+`;
+  writeFileSync(resolve(assets, `badge-${slug}.svg`), svg);
+  return svg;
+}
+
+const badgeEmail = badgeSvg({ label: 's.bhat@gwu.edu', glyph: GLYPHS.mail, slug: 'email' });
+const badgePortfolio = badgeSvg({ label: 'portfolio', glyph: GLYPHS.arrow, slug: 'portfolio' });
+const badgeGithub = badgeSvg({ label: 'Swastikbhat-lab', glyph: GLYPHS.github, slug: 'github' });
+
+const techBadges = [
+  ['Python', 'python'],
+  ['Java', 'java'],
+  ['TypeScript', 'typescript'],
+  ['C++', 'cpp'],
+  ['PyTorch', 'pytorch'],
+  ['scikit-learn', 'scikit-learn'],
+  ['TensorFlow', 'tensorflow'],
+  ['NumPy', 'numpy'],
+  ['Pandas', 'pandas'],
+  ['Plotly', 'plotly'],
+  ['SciPy', 'scipy'],
+  ['LangGraph', 'langgraph'],
+  ['PostgreSQL', 'postgresql'],
+  ['MySQL', 'mysql'],
+  ['mlflow', 'mlflow'],
+];
+const techSvg = techBadges.map(([label, slug]) => badgeSvg({ label, slug }));
 
 // ---- preview.html with the SVGs inlined (no server needed) -----------------
 const page = `<!DOCTYPE html>
@@ -196,44 +259,61 @@ const page = `<!DOCTYPE html>
 <title>Swastikbhat-lab profile — preview</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { background: #0d1117; min-height: 100vh; display: flex; flex-direction: column;
+  body { background: #f6f8fa; min-height: 100vh; display: flex; flex-direction: column;
          align-items: center; justify-content: center; gap: 26px; padding: 32px;
          font-family: ui-monospace, "Cascadia Mono", Consolas, monospace; }
-  .card { width: min(940px, 96vw); background: #010409; border: 1px solid #30363d;
-          border-radius: 14px; overflow: hidden; box-shadow: 0 18px 80px rgba(0,0,0,.7); }
-  .card h2 { padding: 14px 20px 0; color: #8b949e; font-size: 13px; letter-spacing: 1px;
+  .card { width: min(940px, 96vw); background: #ffffff; border: 1px solid #d0d7de;
+          border-radius: 14px; overflow: hidden; box-shadow: 0 18px 60px rgba(31,35,40,.08); }
+  .card h2 { padding: 14px 20px 0; color: #57606a; font-size: 13px; letter-spacing: 1px;
              text-transform: uppercase; }
-  .card .note { padding: 0 20px 14px; color: #484f58; font-size: 12px; }
+  .card .note { padding: 0 20px 14px; color: #6e7781; font-size: 12px; }
   .card svg { display: block; width: 100%; height: auto; }
-  .badges { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; padding: 6px 24px 24px; }
-  .badge { background: #1f2328; border: 1px solid #30363d; color: #e6edf3; font-size: 12px;
-           padding: 6px 12px; border-radius: 999px; }
+  .badges { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; align-items: center; padding: 6px 24px 24px; }
+  .badges svg { width: auto; height: 36px; }
 </style>
 </head>
 <body>
 
 <div class="card">
-  <h2>Header — assets/header-v4.svg (full session, monochrome, always complete)</h2>
-  <div class="note">whoami → pwd → now → proof → ask_me, all in one terminal. SMIL, plays on GitHub.</div>
+  <h2>Header — assets/header-v5.svg (full session, light monochrome, always complete)</h2>
+  <div class="note">whoami → pwd → now → proof → ask_me, all in one terminal. SMIL, plays on GitHub. White canvas = seamless with the light page.</div>
   ${header.svg}
 </div>
 
 <div class="card">
-  <h2>Achievements — assets/achievements.svg (self-hosted, replaces dead trophy API)</h2>
+  <h2>Contact badges — assets/badge-email.svg · badge-portfolio.svg · badge-github.svg</h2>
+  <div class="note">self-hosted pills — white, thin border, black text. Replaces the dark shields.io badges.</div>
+  <div class="badges">
+    ${badgeEmail}
+    ${badgePortfolio}
+    ${badgeGithub}
+  </div>
+</div>
+
+<div class="card">
+  <h2>Achievements — assets/achievements-v2.svg (self-hosted, replaces dead trophy API)</h2>
   <div class="note">real numbers, monochrome chips, fade-in — cannot break like github-profile-trophy (HTTP 402).</div>
   ${achievementsSvg}
 </div>
 
 <div class="card">
-  <h2>Footer — assets/footer.svg ($ cat contact)</h2>
-  <div class="note">email · site · motto — same terminal, same BnW palette.</div>
+  <h2>Stats — assets/stats-v2.svg (curated readout, self-hosted)</h2>
+  <div class="note">real numbers that read well — account age, repos, commits, languages. No Rank C, no 0-star widget.</div>
+  ${stats.svg}
+</div>
+
+<div class="card">
+  <h2>Footer — assets/footer-v2.svg ($ cat contact)</h2>
+  <div class="note">email · site · motto — same terminal, same light BnW palette.</div>
   ${footer.svg}
 </div>
 
 <div class="card">
-  <h2>Stats — assets/stats.svg (curated readout, self-hosted)</h2>
-  <div class="note">real numbers that read well — account age, repos, commits, languages. No Rank C, no 0-star widget.</div>
-  ${stats.svg}
+  <h2>Tech-stack pills — assets/badge-*.svg</h2>
+  <div class="note">same pill style as the contact badges, one per technology.</div>
+  <div class="badges">
+    ${techSvg.join('\n    ')}
+  </div>
 </div>
 
 </body>
@@ -241,4 +321,4 @@ const page = `<!DOCTYPE html>
 `;
 writeFileSync(resolve(__dirname, '..', 'preview.html'), page);
 
-console.log('wrote header-v4.svg, footer.svg, achievements.svg, stats.svg, preview.html');
+console.log('wrote header-v5.svg, footer-v2.svg, achievements-v2.svg, stats-v2.svg, 18 badges, preview.html');

@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="76" height="36" viewBox="0 0 76 36" font-family="ui-monospace,'Cascadia Mono',Consolas,'Courier New',monospace">
+  <rect x="0.75" y="0.75" width="74.5" height="34.5" rx="17.25" fill="#ffffff" stroke="#d0d7de" stroke-width="1.5"/>
+
+  <text x="38" y="22" text-anchor="middle" font-size="13" fill="#1f2328">NumPy</text>
+</svg>
