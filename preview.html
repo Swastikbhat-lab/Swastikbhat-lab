@@ -152,13 +152,41 @@
 </div>
 
 <div class="card">
-  <h2>Stats row — renders on GitHub (external services)</h2>
-  <div class="note">stats card (commits/PRs/stars, monochrome) + top-languages, both via the working shion.dev mirror — the streak service died (Application Error).</div>
-  <div class="badges">
-    <span class="badge">stats — commits · PRs · stars</span>
-    <span class="badge">top languages</span>
-    <span class="badge">achievements — self-hosted</span>
-  </div>
+  <h2>Stats — assets/stats.svg (curated readout, self-hosted)</h2>
+  <div class="note">real numbers that read well — account age, repos, commits, languages. No Rank C, no 0-star widget.</div>
+  <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="310" viewBox="0 0 1200 310" font-family="ui-monospace,'Cascadia Mono',Consolas,'Courier New',monospace">
+  <defs>
+    <linearGradient id="bar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#e6edf3"/>
+      <stop offset="0.5" stop-color="#8b949e"/>
+      <stop offset="1" stop-color="#e6edf3"/>
+      <animate attributeName="x1" values="0;1;0" dur="9s" repeatCount="indefinite"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="310" fill="#010409"/>
+
+  <rect x="40" y="30" width="1120" height="260" rx="14" fill="#0d1117" stroke="#30363d" stroke-width="2"/>
+  <rect x="40" y="30" width="1120" height="46" rx="14" fill="#161b22"/>
+  <rect x="40" y="58" width="1120" height="18" fill="#161b22"/>
+  <circle cx="78" cy="53" r="6.5" fill="#3d444d"/>
+  <circle cx="99" cy="53" r="6.5" fill="#3d444d"/>
+  <circle cx="120" cy="53" r="6.5" fill="#3d444d"/>
+  <text x="600" y="59" text-anchor="middle" font-size="15" fill="#8b949e">swastik@github — ~/stats</text>
+
+  <text x="70" y="116" font-size="18" fill="#8b949e">$ gh stats --profile</text>
+  <text x="70" y="146" font-size="18" fill="#e6edf3">years_on_github    7</text>
+  <text x="70" y="176" font-size="18" fill="#e6edf3">public_repos       13</text>
+  <text x="70" y="206" font-size="18" fill="#e6edf3">commits_this_year  61</text>
+  <text x="70" y="236" font-size="18" fill="#e6edf3">languages          Python · Jupyter · TypeScript · JavaScript</text>
+
+  <rect x="70" y="260" width="10" height="20" fill="#e6edf3">
+    <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
+  </rect>
+
+  <rect x="40" y="286" width="1120" height="4" rx="2" fill="url(#bar)"/>
+</svg>
+
 </div>
 
 </body>

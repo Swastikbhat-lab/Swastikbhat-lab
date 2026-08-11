@@ -59,9 +59,7 @@
 
 <div align="center">
 
-![](https://github-readme-stats.shion.dev/api?username=Swastikbhat-lab&theme=dark&hide_border=true&bg_color=0d1117&title_color=e6edf3&text_color=9da7b3&icon_color=8b949e)
-
-![](https://github-readme-stats.shion.dev/api/top-langs/?username=Swastikbhat-lab&theme=dark&hide_border=true&bg_color=0d1117&layout=compact)
+<img src="assets/stats.svg" alt="GitHub stats — 7 years on GitHub, 13 repos, 61 commits this year, Python-led stack" width="100%">
 
 </div>
 

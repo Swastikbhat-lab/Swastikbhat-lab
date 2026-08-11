@@ -171,6 +171,23 @@ ${items.map((it, i) => {
 const achievementsSvg = achievements();
 writeFileSync(resolve(assets, 'achievements.svg'), achievementsSvg);
 
+// ---- curated stats readout (replaces the raw GitHub cards) ------------------
+// The github-readme-stats cards exposed raw numbers that read badly for a
+// fresh account (Rank C, 0 stars). This is a curated, honest snapshot of the
+// numbers that do read well — self-hosted, so it cannot break or embarrass.
+const stats = session({
+  title: 'swastik@github — ~/stats',
+  winY: 30,
+  lines: [
+    { t: 'cmd', s: '$ gh stats --profile' },
+    { t: 'out', s: 'years_on_github    7' },
+    { t: 'out', s: 'public_repos       13' },
+    { t: 'out', s: 'commits_this_year  61' },
+    { t: 'out', s: 'languages          Python · Jupyter · TypeScript · JavaScript' },
+  ],
+});
+writeFileSync(resolve(assets, 'stats.svg'), stats.svg);
+
 // ---- preview.html with the SVGs inlined (no server needed) -----------------
 const page = `<!DOCTYPE html>
 <html lang="en">
@@ -214,13 +231,9 @@ const page = `<!DOCTYPE html>
 </div>
 
 <div class="card">
-  <h2>Stats row — renders on GitHub (external services)</h2>
-  <div class="note">stats card (commits/PRs/stars, monochrome) + top-languages, both via the working shion.dev mirror — the streak service died (Application Error).</div>
-  <div class="badges">
-    <span class="badge">stats — commits · PRs · stars</span>
-    <span class="badge">top languages</span>
-    <span class="badge">achievements — self-hosted</span>
-  </div>
+  <h2>Stats — assets/stats.svg (curated readout, self-hosted)</h2>
+  <div class="note">real numbers that read well — account age, repos, commits, languages. No Rank C, no 0-star widget.</div>
+  ${stats.svg}
 </div>
 
 </body>
@@ -228,4 +241,4 @@ const page = `<!DOCTYPE html>
 `;
 writeFileSync(resolve(__dirname, '..', 'preview.html'), page);
 
-console.log('wrote header-v4.svg, footer.svg, achievements.svg, preview.html');
+console.log('wrote header-v4.svg, footer.svg, achievements.svg, stats.svg, preview.html');
