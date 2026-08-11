@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="assets/header-v5.svg" alt="Swastik Bhat — AI/ML engineer" width="100%">
+<img src="assets/header-v6.svg" alt="Swastik Bhat — AI/ML engineer" width="100%">
 
 **AI/ML engineer** building agents that make decisions — and systems that survive contact with reality.
 
@@ -59,7 +59,7 @@
 
 <div align="center">
 
-<img src="assets/stats-v2.svg" alt="GitHub stats — 7 years on GitHub, 13 repos, 61 commits this year, Python-led stack" width="100%">
+<img src="assets/stats-v3.svg" alt="GitHub stats — 7 years on GitHub, 13 repos, 61 commits this year, Python-led stack" width="100%">
 
 </div>
 
@@ -67,6 +67,6 @@
 
 <div align="center">
 
-<img src="assets/footer-v2.svg" alt="contact — email, site, motto" width="100%">
+<img src="assets/footer-v3.svg" alt="contact — email, site, motto" width="100%">
 
 </div>

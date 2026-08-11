@@ -1,14 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="310" viewBox="0 0 1200 310" font-family="ui-monospace,'Cascadia Mono',Consolas,'Courier New',monospace">
-  <defs>
-    <linearGradient id="bar" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="#1f2328"/>
-      <stop offset="0.5" stop-color="#57606a"/>
-      <stop offset="1" stop-color="#1f2328"/>
-      <animate attributeName="x1" values="0;1;0" dur="9s" repeatCount="indefinite"/>
-    </linearGradient>
-  </defs>
-
-  <rect width="1200" height="310" fill="#ffffff"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="302" viewBox="0 0 1200 302" font-family="ui-monospace,'Cascadia Mono',Consolas,'Courier New',monospace">
+  <rect width="1200" height="302" fill="#ffffff"/>
 
   <rect x="40" y="30" width="1120" height="260" rx="14" fill="#f6f8fa" stroke="#d0d7de" stroke-width="2"/>
   <rect x="40" y="30" width="1120" height="46" rx="14" fill="#eef1f4"/>
@@ -27,6 +18,4 @@
   <rect x="70" y="260" width="10" height="20" fill="#1f2328">
     <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
   </rect>
-
-  <rect x="40" y="286" width="1120" height="4" rx="2" fill="url(#bar)"/>
 </svg>

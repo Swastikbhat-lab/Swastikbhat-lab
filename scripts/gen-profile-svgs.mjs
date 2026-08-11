@@ -1,6 +1,6 @@
 /**
- * Generate assets/header-v5.svg, assets/footer-v2.svg, assets/achievements-v2.svg,
- * assets/stats-v2.svg, the light badge pills (assets/badge-*.svg), and preview.html
+ * Generate assets/header-v6.svg, assets/footer-v3.svg, assets/achievements-v2.svg,
+ * assets/stats-v3.svg, the light badge pills (assets/badge-*.svg), and preview.html
  * (with the SVGs inlined so the Freebuff preview works without a server).
  *
  * Light monochrome, SMIL typewriter animation, no scripts — GitHub-safe.
@@ -43,13 +43,12 @@ function session({ title, lines, winY = 36 }) {
   const n = lines.length;
   const textY0 = winY + TITLE_BAR_H + 40; // first baseline
   const winH = TITLE_BAR_H + 40 + n * STEP + 24; // room for cursor below last line
-  const barY = winY + winH - 4;
-  const height = winY + winH + 20;
+  const height = winY + winH + 12;
   const cursorY = textY0 + n * STEP - 6;
 
   // All lines are visible from the first frame — a slow typewriter reveal made
   // the header look half-empty (and 'broken') to anyone visiting mid-animation.
-  // The cursor and the gradient bar still animate, so the terminal feels alive.
+  // Only the cursor animates, so the terminal stays calm and seamless.
   const rows = lines.map((ln, i) => {
     const y = textY0 + i * STEP;
     const color = ln.t === 'cmd' ? P.dim : P.text;
@@ -58,15 +57,6 @@ function session({ title, lines, winY = 36 }) {
 
   return {
     svg: `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" font-family="ui-monospace,'Cascadia Mono',Consolas,'Courier New',monospace">
-  <defs>
-    <linearGradient id="bar" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="${P.text}"/>
-      <stop offset="0.5" stop-color="${P.dim}"/>
-      <stop offset="1" stop-color="${P.text}"/>
-      <animate attributeName="x1" values="0;1;0" dur="9s" repeatCount="indefinite"/>
-    </linearGradient>
-  </defs>
-
   <rect width="${width}" height="${height}" fill="${P.bg}"/>
 
   <rect x="40" y="${winY}" width="${width - 80}" height="${winH}" rx="14" fill="${P.win}" stroke="${P.winBorder}" stroke-width="2"/>
@@ -82,8 +72,6 @@ ${rows.join('\n')}
   <rect x="${X0}" y="${cursorY}" width="10" height="20" fill="${P.text}">
     <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
   </rect>
-
-  <rect x="40" y="${barY}" width="${width - 80}" height="4" rx="2" fill="url(#bar)"/>
 </svg>
 `,
     height,
@@ -93,7 +81,8 @@ ${rows.join('\n')}
 // ---- header: the full about session ---------------------------------------
 // Cache-busted name: camo (GitHub's image proxy) served stale bytes of the old
 // animated header forever because the URL never changed. A rename forces a
-// fresh fetch — same reason this became v4, and now v5 for the light theme.
+// fresh fetch — v4 → v5 for the light theme, v5 → v6 once the bottom bar was
+// dropped so the images sit seamlessly on the page.
 const header = session({
   title: 'swastik@github — ~/profile',
   lines: [
@@ -114,7 +103,7 @@ const header = session({
     { t: 'out', s: 'langgraph pipelines · EEG signal classification · turbine fault detection · energy project risk models' },
   ],
 });
-writeFileSync(resolve(assets, 'header-v5.svg'), header.svg);
+writeFileSync(resolve(assets, 'header-v6.svg'), header.svg);
 
 // ---- footer: $ cat contact -------------------------------------------------
 const footer = session({
@@ -127,7 +116,7 @@ const footer = session({
     { t: 'out', s: 'motto → an output that changes a business decision beats a benchmark that impresses nobody' },
   ],
 });
-writeFileSync(resolve(assets, 'footer-v2.svg'), footer.svg);
+writeFileSync(resolve(assets, 'footer-v3.svg'), footer.svg);
 
 // ---- achievements strip (replaces the dead github-profile-trophy service) ---
 // Self-hosted, monochrome, real numbers — cannot break like the third-party
@@ -186,7 +175,7 @@ const stats = session({
     { t: 'out', s: 'languages          Python · Jupyter · TypeScript · JavaScript' },
   ],
 });
-writeFileSync(resolve(assets, 'stats-v2.svg'), stats.svg);
+writeFileSync(resolve(assets, 'stats-v3.svg'), stats.svg);
 
 // ---- badge pills (replace shields.io: it cannot do dark text on light) ------
 // Hand-rolled pills that match the light terminal — white, thin border, black
@@ -275,7 +264,7 @@ const page = `<!DOCTYPE html>
 <body>
 
 <div class="card">
-  <h2>Header — assets/header-v5.svg (full session, light monochrome, always complete)</h2>
+  <h2>Header — assets/header-v6.svg (full session, light monochrome, always complete)</h2>
   <div class="note">whoami → pwd → now → proof → ask_me, all in one terminal. SMIL, plays on GitHub. White canvas = seamless with the light page.</div>
   ${header.svg}
 </div>
@@ -297,13 +286,13 @@ const page = `<!DOCTYPE html>
 </div>
 
 <div class="card">
-  <h2>Stats — assets/stats-v2.svg (curated readout, self-hosted)</h2>
+  <h2>Stats — assets/stats-v3.svg (curated readout, self-hosted)</h2>
   <div class="note">real numbers that read well — account age, repos, commits, languages. No Rank C, no 0-star widget.</div>
   ${stats.svg}
 </div>
 
 <div class="card">
-  <h2>Footer — assets/footer-v2.svg ($ cat contact)</h2>
+  <h2>Footer — assets/footer-v3.svg ($ cat contact)</h2>
   <div class="note">email · site · motto — same terminal, same light BnW palette.</div>
   ${footer.svg}
 </div>
@@ -321,4 +310,4 @@ const page = `<!DOCTYPE html>
 `;
 writeFileSync(resolve(__dirname, '..', 'preview.html'), page);
 
-console.log('wrote header-v5.svg, footer-v2.svg, achievements-v2.svg, stats-v2.svg, 18 badges, preview.html');
+console.log('wrote header-v6.svg, footer-v3.svg, achievements-v2.svg, stats-v3.svg, 18 badges, preview.html');
