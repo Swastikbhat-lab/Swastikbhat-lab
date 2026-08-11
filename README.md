@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="assets/header.svg" alt="Swastik Bhat — AI/ML engineer" width="100%">
+<img src="assets/header-v4.svg" alt="Swastik Bhat — AI/ML engineer" width="100%">
 
 **AI/ML engineer** building agents that make decisions — and systems that survive contact with reality.
 

@@ -1,6 +1,7 @@
 /**
- * Generate assets/header.svg, assets/footer.svg, and preview.html (with the
- * SVGs inlined so the Freebuff preview works without a server).
+ * Generate assets/header-v4.svg, assets/footer.svg, assets/achievements.svg,
+ * and preview.html (with the SVGs inlined so the Freebuff preview works
+ * without a server).
  *
  * Monochrome, SMIL typewriter animation, no scripts — GitHub-safe.
  * Run: node scripts/gen-profile-svgs.mjs
@@ -110,7 +111,10 @@ const header = session({
     { t: 'out', s: 'langgraph pipelines · EEG signal classification · turbine fault detection · energy project risk models' },
   ],
 });
-writeFileSync(resolve(assets, 'header.svg'), header.svg);
+// Cache-busted name: camo (GitHub's image proxy) served stale bytes of the
+// old animated header forever because the URL never changed. A rename forces
+// a fresh fetch.
+writeFileSync(resolve(assets, 'header-v4.svg'), header.svg);
 
 // ---- footer: $ cat contact -------------------------------------------------
 const footer = session({
@@ -192,7 +196,7 @@ const page = `<!DOCTYPE html>
 <body>
 
 <div class="card">
-  <h2>Header — assets/header.svg (full about session, monochrome, typed)</h2>
+  <h2>Header — assets/header-v4.svg (full session, monochrome, always complete)</h2>
   <div class="note">whoami → pwd → now → proof → ask_me, all in one terminal. SMIL, plays on GitHub.</div>
   ${header.svg}
 </div>
@@ -224,4 +228,4 @@ const page = `<!DOCTYPE html>
 `;
 writeFileSync(resolve(__dirname, '..', 'preview.html'), page);
 
-console.log('wrote header.svg, footer.svg, achievements.svg, preview.html');
+console.log('wrote header-v4.svg, footer.svg, achievements.svg, preview.html');

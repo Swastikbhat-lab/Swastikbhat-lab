@@ -6,10 +6,6 @@
       <stop offset="1" stop-color="#e6edf3"/>
       <animate attributeName="x1" values="0;1;0" dur="9s" repeatCount="indefinite"/>
     </linearGradient>
-    <clipPath id="l0"><rect x="70" y="98" width="0" height="24"><animate attributeName="width" from="0" to="177" begin="0.6s" dur="0.8s" fill="freeze"/></rect></clipPath>
-    <clipPath id="l1"><rect x="70" y="128" width="0" height="24"><animate attributeName="width" from="0" to="271" begin="1.9s" dur="0.8s" fill="freeze"/></rect></clipPath>
-    <clipPath id="l2"><rect x="70" y="158" width="0" height="24"><animate attributeName="width" from="0" to="565" begin="3.1s" dur="0.8s" fill="freeze"/></rect></clipPath>
-    <clipPath id="l3"><rect x="70" y="188" width="0" height="24"><animate attributeName="width" from="0" to="985" begin="4.3s" dur="0.8s" fill="freeze"/></rect></clipPath>
   </defs>
 
   <rect width="1200" height="280" fill="#010409"/>
@@ -22,13 +18,13 @@
   <circle cx="120" cy="53" r="6.5" fill="#3d444d"/>
   <text x="600" y="59" text-anchor="middle" font-size="15" fill="#8b949e">swastik@github — ~/contact</text>
 
-  <g clip-path="url(#l0)"><text x="70" y="116" font-size="18" fill="#8b949e">$ cat contact</text></g>
-  <g clip-path="url(#l1)"><text x="70" y="146" font-size="18" fill="#e6edf3">email → s.bhat@gwu.edu</text></g>
-  <g clip-path="url(#l2)"><text x="70" y="176" font-size="18" fill="#e6edf3">site  → https://wise-white-iebpvfefdq.edgeone.app/</text></g>
-  <g clip-path="url(#l3)"><text x="70" y="206" font-size="18" fill="#e6edf3">motto → an output that changes a business decision beats a benchmark that impresses nobody</text></g>
+  <text x="70" y="116" font-size="18" fill="#8b949e">$ cat contact</text>
+  <text x="70" y="146" font-size="18" fill="#e6edf3">email → s.bhat@gwu.edu</text>
+  <text x="70" y="176" font-size="18" fill="#e6edf3">site  → https://wise-white-iebpvfefdq.edgeone.app/</text>
+  <text x="70" y="206" font-size="18" fill="#e6edf3">motto → an output that changes a business decision beats a benchmark that impresses nobody</text>
 
   <rect x="70" y="230" width="10" height="20" fill="#e6edf3">
-    <animate attributeName="opacity" values="1;0;1" dur="1s" begin="6.0s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
   </rect>
 
   <rect x="40" y="256" width="1120" height="4" rx="2" fill="url(#bar)"/>
