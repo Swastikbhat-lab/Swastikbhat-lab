@@ -211,10 +211,10 @@ const page = `<!DOCTYPE html>
 
 <div class="card">
   <h2>Stats row — renders on GitHub (external services)</h2>
-  <div class="note">streak (recolored BnW) via streak-stats.demolab.com + top-languages via the shion.dev mirror (the original .vercel.app is also down, 503).</div>
+  <div class="note">stats card (commits/PRs/stars, monochrome) + top-languages, both via the working shion.dev mirror — the streak service died (Application Error).</div>
   <div class="badges">
-    <span class="badge">streak — gray ring/fire</span>
-    <span class="badge">top languages — shion mirror</span>
+    <span class="badge">stats — commits · PRs · stars</span>
+    <span class="badge">top languages</span>
     <span class="badge">achievements — self-hosted</span>
   </div>
 </div>

@@ -59,7 +59,7 @@
 
 <div align="center">
 
-![](https://streak-stats.demolab.com/?user=Swastikbhat-lab&theme=dark&hide_border=true&background=0d1117&ring=e6edf3&fire=e6edf3&currStreakLabel=e6edf3&sideLabels=8b949e&dates=8b949e)
+![](https://github-readme-stats.shion.dev/api?username=Swastikbhat-lab&theme=dark&hide_border=true&bg_color=0d1117&title_color=e6edf3&text_color=9da7b3&icon_color=8b949e)
 
 ![](https://github-readme-stats.shion.dev/api/top-langs/?username=Swastikbhat-lab&theme=dark&hide_border=true&bg_color=0d1117&layout=compact)
 
