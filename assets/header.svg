@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="300" viewBox="0 0 1200 300" font-family="ui-monospace,'Cascadia Mono',Consolas,'Courier New',monospace">
+  <defs>
+    <linearGradient id="bar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#58a6ff"/>
+      <stop offset="0.5" stop-color="#bc8cff"/>
+      <stop offset="1" stop-color="#3fb950"/>
+      <animate attributeName="x1" values="0;1;0" dur="9s" repeatCount="indefinite"/>
+    </linearGradient>
+    <!-- per-line reveal clips: width grows like a typewriter -->
+    <clipPath id="l1"><rect x="130" y="104" width="0" height="42"><animate attributeName="width" from="0" to="130" begin="0.7s" dur="0.7s" fill="freeze"/></rect></clipPath>
+    <clipPath id="l2"><rect x="130" y="146" width="0" height="42"><animate attributeName="width" from="0" to="880" begin="1.8s" dur="1.1s" fill="freeze"/></rect></clipPath>
+    <clipPath id="l3"><rect x="130" y="188" width="0" height="42"><animate attributeName="width" from="0" to="150" begin="3.2s" dur="0.7s" fill="freeze"/></rect></clipPath>
+    <clipPath id="l4"><rect x="130" y="230" width="0" height="42"><animate attributeName="width" from="0" to="860" begin="4.3s" dur="1.1s" fill="freeze"/></rect></clipPath>
+  </defs>
+
+  <rect width="1200" height="300" fill="#010409"/>
+
+  <!-- terminal window -->
+  <rect x="60" y="36" width="1080" height="228" rx="14" fill="#0d1117" stroke="#30363d" stroke-width="2"/>
+  <rect x="60" y="36" width="1080" height="46" rx="14" fill="#161b22"/>
+  <rect x="60" y="64" width="1080" height="18" fill="#161b22"/>
+  <circle cx="98" cy="59" r="6.5" fill="#ff5f56"/>
+  <circle cx="119" cy="59" r="6.5" fill="#ffbd2e"/>
+  <circle cx="140" cy="59" r="6.5" fill="#27c93f"/>
+  <text x="600" y="65" text-anchor="middle" font-size="15" fill="#8b949e">swastik@github — ~/profile</text>
+
+  <!-- typed lines -->
+  <g clip-path="url(#l1)">
+    <text x="130" y="120" font-size="22" fill="#58a6ff">$ whoami</text>
+  </g>
+  <g clip-path="url(#l2)">
+    <text x="130" y="146" font-size="22" fill="#e6edf3">swastik — ai/ml engineer building things that decide things</text>
+  </g>
+  <g clip-path="url(#l3)">
+    <text x="130" y="190" font-size="22" fill="#58a6ff">$ cat focus</text>
+  </g>
+  <g clip-path="url(#l4)">
+    <text x="130" y="216" font-size="22" fill="#e6edf3">multi-agent systems · energy risk models · self-healing scrapers</text>
+  </g>
+
+  <!-- blinking cursor -->
+  <rect x="130" y="238" width="11" height="22" fill="#3fb950">
+    <animate attributeName="opacity" values="1;0;1" dur="1s" begin="5.4s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- animated bottom bar -->
+  <rect x="60" y="264" width="1080" height="4" rx="2" fill="url(#bar)"/>
+</svg>
