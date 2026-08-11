@@ -6,17 +6,19 @@
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body { background: #0d1117; min-height: 100vh; display: flex; flex-direction: column;
-         align-items: center; justify-content: center; gap: 28px; padding: 32px;
+         align-items: center; justify-content: center; gap: 26px; padding: 32px;
          font-family: ui-monospace, "Cascadia Mono", Consolas, monospace; }
   .card { width: min(900px, 94vw); background: #010409; border: 1px solid #30363d;
           border-radius: 14px; overflow: hidden; box-shadow: 0 18px 80px rgba(0,0,0,.7); }
   .card h2 { padding: 14px 20px 0; color: #8b949e; font-size: 13px; letter-spacing: 1px;
              text-transform: uppercase; }
   .card .note { padding: 0 20px 14px; color: #484f58; font-size: 12px; }
-  .featured { display: flex; flex-direction: column; align-items: center; gap: 14px;
-              padding: 24px; }
-  .featured img { width: min(760px, 100%); border-radius: 10px; border: 1px solid #30363d; }
-  .featured .cap { color: #8b949e; font-size: 12.5px; text-align: center; }
+  .about { padding: 20px 24px 24px; color: #e6edf3; font-size: 14px; line-height: 1.65; }
+  .about .prompt { color: #58a6ff; }
+  .about .dim { color: #8b949e; }
+  .about .good { color: #3fb950; }
+  .about .bad { color: #f85149; }
+  .about pre { font-family: inherit; white-space: pre-wrap; }
   .badges { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center;
             padding: 0 24px 24px; }
   .badge { background: #161b22; border: 1px solid #30363d; color: #e6edf3; font-size: 12px;
@@ -61,22 +63,34 @@
 </div>
 
 <div class="card">
-  <h2>Featured project — scrape-heal (animated GIF, live)</h2>
-  <div class="note">the same GIF the Show HN leads with — click-through from the profile.</div>
-  <div class="featured">
-    <img src="https://github.com/Swastikbhat-lab/scrape-heal/raw/main/docs/demo.gif" alt="scrape-heal demo">
-    <div class="cap">detect → heal → verify → ship. The scraper that repairs itself.</div>
+  <h2>About — terminal session (the "who am I")</h2>
+  <div class="note">real substance from the old README, presented as a session.</div>
+  <div class="about">
+<pre><span class="prompt">$ whoami
+</span>swastik — ai/ml engineer building things that decide things
+<span class="prompt">$ pwd
+</span>~/ms-cs · gwu · arlington, va
+<span class="prompt">$ cat now
+</span>shipping  → multi-agent code review (CodeGuardian) · self-healing scrapers (scrape-heal)
+learning  → scaling multi-agent systems past the prototype · RL fundamentals
+open to   → applied AI/ML where the output changes a business decision
+<span class="prompt">$ cat proof
+</span><span class="bad">✗ no fine-tuning, no labeled data</span> — beat GPT-4-level baselines on TruthfulQA
+<span class="good">✓</span> 8-agent code review — human review time −60%, coverage up to 87%
+<span class="good">✓</span> wind-farm digital twin — faults caught before downtime · 0.91 AUC
+<span class="prompt">$ cat ask_me
+</span><span class="dim">langgraph · EEG classification · turbine fault detection · energy project risk</span></pre>
   </div>
 </div>
 
 <div class="card">
   <h2>Stats row — renders on GitHub (external services)</h2>
-  <div class="note">streak + top-languages cards from the README, shown here as placeholders.</div>
+  <div class="note">trophies (animated, theme-aware) + streak + top-languages, shown as placeholders.</div>
   <div class="badges">
+    <span class="badge">🏆 GitHub trophies</span>
     <span class="badge">🔥 streak stats (github-readme-streak)</span>
     <span class="badge">📊 top languages (github-readme-stats)</span>
     <span class="badge">👀 profile views (komarev)</span>
-    <span class="badge">🏆 GitHub trophies</span>
   </div>
 </div>
 
