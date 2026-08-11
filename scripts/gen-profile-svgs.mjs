@@ -134,6 +134,48 @@ const footer = session({
 });
 writeFileSync(resolve(assets, 'footer.svg'), footer.svg);
 
+// ---- achievements strip (replaces the dead github-profile-trophy service) ---
+// Self-hosted, monochrome, real numbers — cannot break like the third-party
+// trophy API (which now returns HTTP 402).
+function achievements() {
+  const items = [
+    '13 public repos',
+    'MS CS @ GWU',
+    'TruthfulQA ≥ GPT-4',
+    'AUC 0.91',
+    'review time −60%',
+    'MIT open source',
+  ];
+  const chipH = 60;
+  const chipY = 28;
+  const gap = 14;
+  const font = 16;
+  const totalW = 1200;
+  const inner = totalW - 80; // 40 margin each side
+  const chipW = Math.floor((inner - gap * (items.length - 1)) / items.length);
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${totalW}" height="${chipY + chipH + 24}" viewBox="0 0 ${totalW} ${chipY + chipH + 24}" font-family="ui-monospace,'Cascadia Mono',Consolas,'Courier New',monospace">
+  <rect width="${totalW}" height="${chipY + chipH + 24}" fill="#010409"/>
+${items.map((it, i) => {
+    const x = 40 + i * (chipW + gap);
+    const cx = x + chipW / 2;
+    const t1 = it.indexOf(' ');
+    const head = t1 === -1 ? it : it.slice(0, t1);
+    const rest = t1 === -1 ? '' : it.slice(t1);
+    return `  <g opacity="0">
+    <animate attributeName="opacity" from="0" to="1" begin="${(0.4 + i * 0.35).toFixed(1)}s" dur="0.5s" fill="freeze"/>
+    <rect x="${x}" y="${chipY}" width="${chipW}" height="${chipH}" rx="12" fill="#161b22" stroke="#30363d" stroke-width="1.5"/>
+    <text x="${cx}" y="${chipY + 38}" text-anchor="middle" font-size="${font}" font-weight="bold" fill="#e6edf3">${esc(head)}</text>
+    <text x="${cx}" y="${chipY + 18}" text-anchor="middle" font-size="${font - 4}" fill="#8b949e">${esc(rest)}</text>
+  </g>`;
+  }).join('\n')}
+</svg>
+`;
+  return svg;
+}
+
+const achievementsSvg = achievements();
+writeFileSync(resolve(assets, 'achievements.svg'), achievementsSvg);
+
 // ---- preview.html with the SVGs inlined (no server needed) -----------------
 const page = `<!DOCTYPE html>
 <html lang="en">
@@ -165,6 +207,12 @@ const page = `<!DOCTYPE html>
 </div>
 
 <div class="card">
+  <h2>Achievements — assets/achievements.svg (self-hosted, replaces dead trophy API)</h2>
+  <div class="note">real numbers, monochrome chips, fade-in — cannot break like github-profile-trophy (HTTP 402).</div>
+  ${achievementsSvg}
+</div>
+
+<div class="card">
   <h2>Footer — assets/footer.svg ($ cat contact)</h2>
   <div class="note">email · site · motto — same terminal, same BnW palette.</div>
   ${footer.svg}
@@ -172,12 +220,11 @@ const page = `<!DOCTYPE html>
 
 <div class="card">
   <h2>Stats row — renders on GitHub (external services)</h2>
-  <div class="note">trophies (grayscale) + streak (recolored BnW) + top-languages; all badges monochrome.</div>
+  <div class="note">streak (recolored BnW) via streak-stats.demolab.com + top-languages via the shion.dev mirror (the original .vercel.app is also down, 503).</div>
   <div class="badges">
-    <span class="badge">trophies — darkhub</span>
     <span class="badge">streak — gray ring/fire</span>
-    <span class="badge">top languages</span>
-    <span class="badge">no emoji — plain BnW headers</span>
+    <span class="badge">top languages — shion mirror</span>
+    <span class="badge">achievements — self-hosted</span>
   </div>
 </div>
 
@@ -186,4 +233,4 @@ const page = `<!DOCTYPE html>
 `;
 writeFileSync(resolve(__dirname, '..', 'preview.html'), page);
 
-console.log(`wrote header.svg (${header.height}px), footer.svg (${footer.height}px), preview.html`);
+console.log('wrote header.svg, footer.svg, achievements.svg, preview.html');

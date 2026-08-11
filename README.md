@@ -8,7 +8,7 @@
 [![portfolio](https://img.shields.io/badge/portfolio-1f2328?style=flat-square&logo=vercel&logoColor=e6edf3&color=1f2328)](https://wise-white-iebpvfefdq.edgeone.app/)
 [![github](https://img.shields.io/badge/Swastikbhat--lab-1f2328?style=flat-square&logo=github&logoColor=e6edf3&color=1f2328)](https://github.com/Swastikbhat-lab)
 
-<img src="https://github-profile-trophy.vercel.app/?username=Swastikbhat-lab&theme=darkhub&no-frame=true&no-bg=true&margin-w=6&row=1&column=6" alt="GitHub trophies" width="100%">
+<img src="assets/achievements.svg" alt="achievements — repos, degree, TruthfulQA, AUC, review time, license" width="100%">
 
 </div>
 
@@ -37,7 +37,7 @@
 
 ![](https://streak-stats.demolab.com/?user=Swastikbhat-lab&theme=dark&hide_border=true&background=0d1117&ring=e6edf3&fire=e6edf3&currStreakLabel=e6edf3&sideLabels=8b949e&dates=8b949e)
 
-![](https://github-readme-stats.vercel.app/api/top-langs/?username=Swastikbhat-lab&theme=dark&hide_border=true&bg_color=0d1117&layout=compact)
+![](https://github-readme-stats.shion.dev/api/top-langs/?username=Swastikbhat-lab&theme=dark&hide_border=true&bg_color=0d1117&layout=compact)
 
 </div>
 
