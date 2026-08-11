@@ -6,21 +6,6 @@
       <stop offset="1" stop-color="#e6edf3"/>
       <animate attributeName="x1" values="0;1;0" dur="9s" repeatCount="indefinite"/>
     </linearGradient>
-    <clipPath id="l0"><rect x="70" y="104" width="0" height="24"><animate attributeName="width" from="0" to="124" begin="0.6s" dur="0.8s" fill="freeze"/></rect></clipPath>
-    <clipPath id="l1"><rect x="70" y="134" width="0" height="24"><animate attributeName="width" from="0" to="660" begin="1.9s" dur="0.8s" fill="freeze"/></rect></clipPath>
-    <clipPath id="l2"><rect x="70" y="164" width="0" height="24"><animate attributeName="width" from="0" to="93" begin="3.1s" dur="0.8s" fill="freeze"/></rect></clipPath>
-    <clipPath id="l3"><rect x="70" y="194" width="0" height="24"><animate attributeName="width" from="0" to="345" begin="4.3s" dur="0.8s" fill="freeze"/></rect></clipPath>
-    <clipPath id="l4"><rect x="70" y="224" width="0" height="24"><animate attributeName="width" from="0" to="135" begin="5.6s" dur="0.8s" fill="freeze"/></rect></clipPath>
-    <clipPath id="l5"><rect x="70" y="254" width="0" height="24"><animate attributeName="width" from="0" to="964" begin="6.8s" dur="0.8s" fill="freeze"/></rect></clipPath>
-    <clipPath id="l6"><rect x="70" y="284" width="0" height="24"><animate attributeName="width" from="0" to="838" begin="8.1s" dur="0.8s" fill="freeze"/></rect></clipPath>
-    <clipPath id="l7"><rect x="70" y="314" width="0" height="24"><animate attributeName="width" from="0" to="775" begin="9.3s" dur="0.8s" fill="freeze"/></rect></clipPath>
-    <clipPath id="l8"><rect x="70" y="344" width="0" height="24"><animate attributeName="width" from="0" to="156" begin="10.6s" dur="0.8s" fill="freeze"/></rect></clipPath>
-    <clipPath id="l9"><rect x="70" y="374" width="0" height="24"><animate attributeName="width" from="0" to="838" begin="11.8s" dur="0.8s" fill="freeze"/></rect></clipPath>
-    <clipPath id="l10"><rect x="70" y="404" width="0" height="24"><animate attributeName="width" from="0" to="849" begin="13.1s" dur="0.8s" fill="freeze"/></rect></clipPath>
-    <clipPath id="l11"><rect x="70" y="434" width="0" height="24"><animate attributeName="width" from="0" to="807" begin="14.3s" dur="0.8s" fill="freeze"/></rect></clipPath>
-    <clipPath id="l12"><rect x="70" y="464" width="0" height="24"><animate attributeName="width" from="0" to="744" begin="15.6s" dur="0.8s" fill="freeze"/></rect></clipPath>
-    <clipPath id="l13"><rect x="70" y="494" width="0" height="24"><animate attributeName="width" from="0" to="166" begin="16.9s" dur="0.8s" fill="freeze"/></rect></clipPath>
-    <clipPath id="l14"><rect x="70" y="524" width="0" height="24"><animate attributeName="width" from="0" to="1100" begin="18.1s" dur="0.8s" fill="freeze"/></rect></clipPath>
   </defs>
 
   <rect width="1200" height="616" fill="#010409"/>
@@ -33,24 +18,24 @@
   <circle cx="120" cy="59" r="6.5" fill="#3d444d"/>
   <text x="600" y="65" text-anchor="middle" font-size="15" fill="#8b949e">swastik@github — ~/profile</text>
 
-  <g clip-path="url(#l0)"><text x="70" y="122" font-size="18" fill="#8b949e">$ whoami</text></g>
-  <g clip-path="url(#l1)"><text x="70" y="152" font-size="18" fill="#e6edf3">swastik — ai/ml engineer building things that decide things</text></g>
-  <g clip-path="url(#l2)"><text x="70" y="182" font-size="18" fill="#8b949e">$ pwd</text></g>
-  <g clip-path="url(#l3)"><text x="70" y="212" font-size="18" fill="#e6edf3">~/ms-cs · gwu · arlington, va</text></g>
-  <g clip-path="url(#l4)"><text x="70" y="242" font-size="18" fill="#8b949e">$ cat now</text></g>
-  <g clip-path="url(#l5)"><text x="70" y="272" font-size="18" fill="#e6edf3">shipping  → multi-agent code review (CodeGuardian) · self-healing scrapers (scrape-heal)</text></g>
-  <g clip-path="url(#l6)"><text x="70" y="302" font-size="18" fill="#e6edf3">learning  → scaling multi-agent systems past the prototype · RL fundamentals</text></g>
-  <g clip-path="url(#l7)"><text x="70" y="332" font-size="18" fill="#e6edf3">open to   → applied AI/ML where the output changes a business decision</text></g>
-  <g clip-path="url(#l8)"><text x="70" y="362" font-size="18" fill="#8b949e">$ cat proof</text></g>
-  <g clip-path="url(#l9)"><text x="70" y="392" font-size="18" fill="#e6edf3">✗ no fine-tuning, no labeled data — beat GPT-4-level baselines on TruthfulQA</text></g>
-  <g clip-path="url(#l10)"><text x="70" y="422" font-size="18" fill="#e6edf3">  with an unsupervised label elicitation algorithm straight from a 2025 paper</text></g>
-  <g clip-path="url(#l11)"><text x="70" y="452" font-size="18" fill="#e6edf3">✓ 8-agent code review system — human review time −60%, coverage up to 87%</text></g>
-  <g clip-path="url(#l12)"><text x="70" y="482" font-size="18" fill="#e6edf3">✓ wind-farm digital twin — faults caught before downtime · 0.91 AUC</text></g>
-  <g clip-path="url(#l13)"><text x="70" y="512" font-size="18" fill="#8b949e">$ cat ask_me</text></g>
-  <g clip-path="url(#l14)"><text x="70" y="542" font-size="18" fill="#e6edf3">langgraph pipelines · EEG signal classification · turbine fault detection · energy project risk models</text></g>
+  <text x="70" y="122" font-size="18" fill="#8b949e">$ whoami</text>
+  <text x="70" y="152" font-size="18" fill="#e6edf3">swastik — ai/ml engineer building things that decide things</text>
+  <text x="70" y="182" font-size="18" fill="#8b949e">$ pwd</text>
+  <text x="70" y="212" font-size="18" fill="#e6edf3">~/ms-cs · gwu · arlington, va</text>
+  <text x="70" y="242" font-size="18" fill="#8b949e">$ cat now</text>
+  <text x="70" y="272" font-size="18" fill="#e6edf3">shipping  → multi-agent code review (CodeGuardian) · self-healing scrapers (scrape-heal)</text>
+  <text x="70" y="302" font-size="18" fill="#e6edf3">learning  → scaling multi-agent systems past the prototype · RL fundamentals</text>
+  <text x="70" y="332" font-size="18" fill="#e6edf3">open to   → applied AI/ML where the output changes a business decision</text>
+  <text x="70" y="362" font-size="18" fill="#8b949e">$ cat proof</text>
+  <text x="70" y="392" font-size="18" fill="#e6edf3">✗ no fine-tuning, no labeled data — beat GPT-4-level baselines on TruthfulQA</text>
+  <text x="70" y="422" font-size="18" fill="#e6edf3">  with an unsupervised label elicitation algorithm straight from a 2025 paper</text>
+  <text x="70" y="452" font-size="18" fill="#e6edf3">✓ 8-agent code review system — human review time −60%, coverage up to 87%</text>
+  <text x="70" y="482" font-size="18" fill="#e6edf3">✓ wind-farm digital twin — faults caught before downtime · 0.91 AUC</text>
+  <text x="70" y="512" font-size="18" fill="#8b949e">$ cat ask_me</text>
+  <text x="70" y="542" font-size="18" fill="#e6edf3">langgraph pipelines · EEG signal classification · turbine fault detection · energy project risk models</text>
 
   <rect x="70" y="566" width="10" height="20" fill="#e6edf3">
-    <animate attributeName="opacity" values="1;0;1" dur="1s" begin="19.8s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
   </rect>
 
   <rect x="40" y="592" width="1120" height="4" rx="2" fill="url(#bar)"/>

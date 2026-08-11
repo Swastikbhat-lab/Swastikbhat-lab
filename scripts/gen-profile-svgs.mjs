@@ -46,22 +46,14 @@ function session({ title, lines, winY = 36 }) {
   const height = winY + winH + 20;
   const cursorY = textY0 + n * STEP - 6;
 
-  const clips = [];
-  const rows = [];
-  let t = 0.6;
-  lines.forEach((ln, i) => {
+  // All lines are visible from the first frame — a slow typewriter reveal made
+  // the header look half-empty (and 'broken') to anyone visiting mid-animation.
+  // The cursor and the gradient bar still animate, so the terminal feels alive.
+  const rows = lines.map((ln, i) => {
     const y = textY0 + i * STEP;
-    const w = Math.min(ln.s.length * CHAR_W + 40, 1100);
-    clips.push(
-      `<clipPath id="l${i}"><rect x="${X0}" y="${y - FONT}" width="0" height="${FONT + 6}"><animate attributeName="width" from="0" to="${w.toFixed(0)}" begin="${t.toFixed(1)}s" dur="0.8s" fill="freeze"/></rect></clipPath>`,
-    );
     const color = ln.t === 'cmd' ? P.dim : P.text;
-    rows.push(
-      `  <g clip-path="url(#l${i})"><text x="${X0}" y="${y}" font-size="${FONT}" fill="${color}">${esc(ln.s)}</text></g>`,
-    );
-    t += 1.25;
+    return `  <text x="${X0}" y="${y}" font-size="${FONT}" fill="${color}">${esc(ln.s)}</text>`;
   });
-  const cursorBegin = t + 0.4;
 
   return {
     svg: `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" font-family="ui-monospace,'Cascadia Mono',Consolas,'Courier New',monospace">
@@ -72,7 +64,6 @@ function session({ title, lines, winY = 36 }) {
       <stop offset="1" stop-color="#e6edf3"/>
       <animate attributeName="x1" values="0;1;0" dur="9s" repeatCount="indefinite"/>
     </linearGradient>
-${clips.map((c) => '    ' + c).join('\n')}
   </defs>
 
   <rect width="${width}" height="${height}" fill="${P.bg}"/>
@@ -88,7 +79,7 @@ ${clips.map((c) => '    ' + c).join('\n')}
 ${rows.join('\n')}
 
   <rect x="${X0}" y="${cursorY}" width="10" height="20" fill="${P.text}">
-    <animate attributeName="opacity" values="1;0;1" dur="1s" begin="${cursorBegin.toFixed(1)}s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
   </rect>
 
   <rect x="40" y="${barY}" width="${width - 80}" height="4" rx="2" fill="url(#bar)"/>

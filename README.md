@@ -16,12 +16,36 @@
 
 ## What I've built
 
-| Project | What it does | Stack |
-|:---|:---|:---|
-| [**scrape-heal**](https://github.com/Swastikbhat-lab/scrape-heal) | A scraper that repairs its own selectors when the site redesigns — verify-then-ship, watchdog, selector ledger | TypeScript · Playwright |
-| [**CodeGuardian**](https://github.com/Swastikbhat-lab/CodeGuardian) | 8-agent code review system. Cut human review time 60%, raised test coverage to 87% | LangGraph · Claude · Langfuse · RAG |
-| [**TurboForge**](https://github.com/Swastikbhat-lab/TurboForge) | Wind farm digital twin. Detects faults before downtime — 0.91 AUC | Temporal GANs · Transformers · PyTorch |
-| **GridIQ** | Flags renewable energy projects at capital-withdrawal risk before the money goes in | XGBoost · SHAP · GeoPandas · MISO/PJM |
+<table style="width:100%; border-collapse:separate; border-spacing:0 12px; border:0;">
+<tr>
+  <td style="background:#161b22; border:1px solid #30363d; border-radius:12px; padding:16px 20px; box-shadow:0 4px 18px rgba(0,0,0,.35);">
+    <a href="https://github.com/Swastikbhat-lab/scrape-heal" style="color:#e6edf3; font-weight:700; text-decoration:none; font-size:16px;">scrape-heal</a>
+    <span style="color:#8b949e; font-size:12px;">&nbsp;&nbsp;TypeScript · Playwright</span><br>
+    <span style="color:#9da7b3; font-size:14px;">A scraper that repairs its own selectors when the site redesigns — verify-then-ship, watchdog, selector ledger.</span>
+  </td>
+</tr>
+<tr>
+  <td style="background:#161b22; border:1px solid #30363d; border-radius:12px; padding:16px 20px; box-shadow:0 4px 18px rgba(0,0,0,.35);">
+    <a href="https://github.com/Swastikbhat-lab/CodeGuardian" style="color:#e6edf3; font-weight:700; text-decoration:none; font-size:16px;">CodeGuardian</a>
+    <span style="color:#8b949e; font-size:12px;">&nbsp;&nbsp;LangGraph · Claude · Langfuse · RAG</span><br>
+    <span style="color:#9da7b3; font-size:14px;">8-agent code review system. Cut human review time 60%, raised test coverage to 87%.</span>
+  </td>
+</tr>
+<tr>
+  <td style="background:#161b22; border:1px solid #30363d; border-radius:12px; padding:16px 20px; box-shadow:0 4px 18px rgba(0,0,0,.35);">
+    <a href="https://github.com/Swastikbhat-lab/TurboForge" style="color:#e6edf3; font-weight:700; text-decoration:none; font-size:16px;">TurboForge</a>
+    <span style="color:#8b949e; font-size:12px;">&nbsp;&nbsp;Temporal GANs · Transformers · PyTorch</span><br>
+    <span style="color:#9da7b3; font-size:14px;">Wind farm digital twin. Detects faults before downtime — 0.91 AUC.</span>
+  </td>
+</tr>
+<tr>
+  <td style="background:#161b22; border:1px solid #30363d; border-radius:12px; padding:16px 20px; box-shadow:0 4px 18px rgba(0,0,0,.35);">
+    <span style="color:#e6edf3; font-weight:700; font-size:16px;">GridIQ</span>
+    <span style="color:#8b949e; font-size:12px;">&nbsp;&nbsp;XGBoost · SHAP · GeoPandas · MISO/PJM</span><br>
+    <span style="color:#9da7b3; font-size:14px;">Flags renewable energy projects at capital-withdrawal risk before the money goes in.</span>
+  </td>
+</tr>
+</table>
 
 ## Tech stack
 
