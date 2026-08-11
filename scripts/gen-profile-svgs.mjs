@@ -182,7 +182,7 @@ const stats = session({
     { t: 'cmd', s: '$ gh stats --profile' },
     { t: 'out', s: 'years_on_github    7' },
     { t: 'out', s: 'public_repos       13' },
-    { t: 'out', s: 'commits_this_year  61' },
+    { t: 'out', s: 'commits_this_year  159' },
     { t: 'out', s: 'languages          Python · Jupyter · TypeScript · JavaScript' },
   ],
 });

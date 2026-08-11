@@ -20,8 +20,8 @@
 <tr>
   <td style="background:#161b22; border:1px solid #30363d; border-radius:12px; padding:16px 20px; box-shadow:0 4px 18px rgba(0,0,0,.35);">
     <a href="https://github.com/Swastikbhat-lab/scrape-heal" style="color:#e6edf3; font-weight:700; text-decoration:none; font-size:16px;">scrape-heal</a>
-    <span style="color:#8b949e; font-size:12px;">&nbsp;&nbsp;TypeScript · Playwright</span><br>
-    <span style="color:#9da7b3; font-size:14px;">A scraper that repairs its own selectors when the site redesigns — verify-then-ship, watchdog, selector ledger.</span>
+    <span style="color:#8b949e; font-size:12px;">&nbsp;&nbsp;TypeScript · Playwright · <a href="https://www.npmjs.com/package/scrape-heal" style="color:#8b949e;">on npm</a></span><br>
+    <span style="color:#9da7b3; font-size:14px;">A scraper that repairs its own selectors when the site redesigns — verify-then-ship, watchdog, selector ledger, and LLM repair when even the data changes.</span>
   </td>
 </tr>
 <tr>
