@@ -16,36 +16,13 @@
 
 ## What I've built
 
-<table style="width:100%; border-collapse:separate; border-spacing:0 12px; border:0;">
-<tr>
-  <td style="background:#ffffff; border:1px solid #d0d7de; border-radius:12px; padding:16px 20px; box-shadow:0 4px 18px rgba(31,35,40,.06);">
-    <a href="https://github.com/Swastikbhat-lab/scrape-heal" style="color:#1f2328; font-weight:700; text-decoration:none; font-size:16px;">scrape-heal</a>
-    <span style="color:#57606a; font-size:12px;">&nbsp;&nbsp;TypeScript · Playwright · <a href="https://www.npmjs.com/package/scrape-heal" style="color:#57606a;">on npm</a></span><br>
-    <span style="color:#57606a; font-size:14px;">A scraper that repairs its own selectors when the site redesigns — verify-then-ship, watchdog, selector ledger, and LLM repair when even the data changes.</span>
-  </td>
-</tr>
-<tr>
-  <td style="background:#ffffff; border:1px solid #d0d7de; border-radius:12px; padding:16px 20px; box-shadow:0 4px 18px rgba(31,35,40,.06);">
-    <a href="https://github.com/Swastikbhat-lab/CodeGuardian" style="color:#1f2328; font-weight:700; text-decoration:none; font-size:16px;">CodeGuardian</a>
-    <span style="color:#57606a; font-size:12px;">&nbsp;&nbsp;LangGraph · Claude · Langfuse · RAG</span><br>
-    <span style="color:#57606a; font-size:14px;">8-agent code review system. Cut human review time 60%, raised test coverage to 87%.</span>
-  </td>
-</tr>
-<tr>
-  <td style="background:#ffffff; border:1px solid #d0d7de; border-radius:12px; padding:16px 20px; box-shadow:0 4px 18px rgba(31,35,40,.06);">
-    <a href="https://github.com/Swastikbhat-lab/TurboForge" style="color:#1f2328; font-weight:700; text-decoration:none; font-size:16px;">TurboForge</a>
-    <span style="color:#57606a; font-size:12px;">&nbsp;&nbsp;Temporal GANs · Transformers · PyTorch</span><br>
-    <span style="color:#57606a; font-size:14px;">Wind farm digital twin. Detects faults before downtime — 0.91 AUC.</span>
-  </td>
-</tr>
-<tr>
-  <td style="background:#ffffff; border:1px solid #d0d7de; border-radius:12px; padding:16px 20px; box-shadow:0 4px 18px rgba(31,35,40,.06);">
-    <span style="color:#1f2328; font-weight:700; font-size:16px;">GridIQ</span>
-    <span style="color:#57606a; font-size:12px;">&nbsp;&nbsp;XGBoost · SHAP · GeoPandas · MISO/PJM</span><br>
-    <span style="color:#57606a; font-size:14px;">Flags renewable energy projects at capital-withdrawal risk before the money goes in.</span>
-  </td>
-</tr>
-</table>
+<div align="center">
+
+<img src="assets/projects-v1.svg" alt="What I've built — scrape-heal, CodeGuardian, TurboForge, GridIQ" width="100%">
+
+</div>
+
+**Repos** — [scrape-heal](https://github.com/Swastikbhat-lab/scrape-heal) · [CodeGuardian](https://github.com/Swastikbhat-lab/CodeGuardian) · [TurboForge](https://github.com/Swastikbhat-lab/TurboForge) · GridIQ
 
 ## Tech stack
 

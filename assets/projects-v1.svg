@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="456" viewBox="0 0 1200 456" font-family="ui-monospace,'Cascadia Mono',Consolas,'Courier New',monospace">
+  <rect width="1200" height="456" fill="#ffffff"/>
+
+  <rect x="40" y="30" width="1120" height="414" rx="14" fill="#f6f8fa" stroke="#d0d7de" stroke-width="2"/>
+  <rect x="40" y="30" width="1120" height="46" rx="14" fill="#eef1f4"/>
+  <rect x="40" y="58" width="1120" height="18" fill="#eef1f4"/>
+  <circle cx="78" cy="53" r="6.5" fill="#afb8c1"/>
+  <circle cx="99" cy="53" r="6.5" fill="#afb8c1"/>
+  <circle cx="120" cy="53" r="6.5" fill="#afb8c1"/>
+  <text x="600" y="59" text-anchor="middle" font-size="15" fill="#57606a">swastik@github — ~/projects</text>
+
+  <text x="70" y="118" font-size="18" fill="#57606a">$ ls projects/</text>
+  <text x="70" y="162" font-size="18" font-weight="bold" fill="#1f2328">scrape-heal</text>
+  <text x="211" y="162" font-size="14" fill="#57606a">TypeScript · Playwright · npm</text>
+  <text x="70" y="188" font-size="15" fill="#57606a">a scraper that repairs its own selectors when the site redesigns — verify-then-ship</text>
+  <text x="70" y="232" font-size="18" font-weight="bold" fill="#1f2328">CodeGuardian</text>
+  <text x="222" y="232" font-size="14" fill="#57606a">LangGraph · Claude · RAG</text>
+  <text x="70" y="258" font-size="15" fill="#57606a">8-agent code review — human review time −60%, coverage up to 87%</text>
+  <text x="70" y="302" font-size="18" font-weight="bold" fill="#1f2328">TurboForge</text>
+  <text x="200" y="302" font-size="14" fill="#57606a">Temporal GANs · PyTorch</text>
+  <text x="70" y="328" font-size="15" fill="#57606a">wind-farm digital twin — faults caught before downtime, 0.91 AUC</text>
+  <text x="70" y="372" font-size="18" font-weight="bold" fill="#1f2328">GridIQ</text>
+  <text x="157" y="372" font-size="14" fill="#57606a">XGBoost · SHAP · GeoPandas</text>
+  <text x="70" y="398" font-size="15" fill="#57606a">flags renewable energy projects at capital-withdrawal risk</text>
+
+  <rect x="70" y="422" width="10" height="20" fill="#1f2328">
+    <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
+  </rect>
+</svg>
