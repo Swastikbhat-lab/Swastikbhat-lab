@@ -1,0 +1,9 @@
+# Generated thumbnail renders — reproduce with:
+#   node scripts/gen-github-thumbnail.mjs
+#   node scripts/gen-portfolio-thumbnail.mjs
+assets/github-thumbnail.png
+assets/portfolio-thumbnail.png
+
+# Node dependencies (thumbnail scripts resolve Playwright from a sibling
+# checkout or a local install; nothing here should be committed)
+node_modules/

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Swastik Bhat — AI / ML Engineer &amp; Researcher</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  /* Same palette as the live site — strict monochrome, no color. */
+  :root{
+    --bg:#0a0a0c;
+    --fg:#f2f2f4;
+    --muted:#9a9aa3;
+    --muted-2:#6a6a74;
+    --line:rgba(255,255,255,.09);
+    --line-2:rgba(255,255,255,.18);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{width:1200px;height:630px;overflow:hidden}
+  body{background:var(--bg);color:var(--fg);font-family:'Inter',system-ui,sans-serif;
+       -webkit-font-smoothing:antialiased;line-height:1.6;position:relative}
+  .mono{font-family:'JetBrains Mono',monospace}
+
+  /* static starfield — fine white dust, no color */
+  #bg3d{position:absolute;inset:0;z-index:0}
+  .vignette{position:absolute;inset:0;z-index:1;pointer-events:none;
+    background:radial-gradient(120% 120% at 50% 0%,transparent 55%,rgba(10,10,12,.85) 100%)}
+  .grain{position:absolute;inset:0;z-index:1;pointer-events:none;opacity:.04;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+  .wrap{position:relative;z-index:2;padding:0 48px}
+
+  /* NAV */
+  header{display:flex;align-items:center;justify-content:space-between;padding-top:28px}
+  .logo{font-weight:600;font-size:16px;letter-spacing:.02em;display:flex;align-items:center;gap:9px;
+    font-family:'JetBrains Mono',monospace}
+  .logo .sq{width:9px;height:9px;background:var(--fg);border-radius:0}
+  nav a{font-size:14px;color:var(--muted);margin-left:28px;text-decoration:none}
+  nav a.cta{color:var(--fg);border:1px solid var(--line-2);padding:9px 18px;border-radius:0}
+
+  /* HERO */
+  .hero{margin-top:48px}
+  .label{font-family:'JetBrains Mono';font-size:13px;color:var(--muted);letter-spacing:.06em;
+    text-transform:uppercase;display:inline-flex;gap:10px;align-items:center}
+  .label::before{content:"";width:22px;height:1px;background:var(--fg)}
+  h1{margin-top:22px;font-weight:700;font-size:64px;letter-spacing:-.04em;line-height:1.04;white-space:nowrap}
+  .role{margin-top:20px;max-width:700px;color:var(--muted);font-size:19px;line-height:1.55}
+  .role b{color:var(--fg);font-weight:500}
+
+  /* METRICS */
+  .metrics{margin-top:44px;display:grid;grid-template-columns:repeat(3,1fr);gap:1px;
+    background:var(--line);border:1px solid var(--line)}
+  .metrics .m{background:var(--bg);padding:26px 24px}
+  .metrics .v{font-size:32px;font-weight:600;letter-spacing:-.02em;line-height:1.15;
+    font-family:'JetBrains Mono',monospace}
+  .metrics .k{color:var(--muted);font-size:13.5px;line-height:1.5;margin-top:8px}
+
+  /* FOOTER */
+  footer{margin-top:40px;border-top:1px solid var(--line);padding-top:14px;display:flex;
+    justify-content:space-between;font-family:'JetBrains Mono';font-size:12.5px;color:var(--muted-2)}
+</style>
+</head>
+<body>
+<canvas id="bg3d" width="1200" height="630"></canvas>
+<div class="vignette"></div>
+<div class="grain"></div>
+
+<div class="wrap">
+  <header>
+    <a class="logo" href="https://wise-white-iebpvfefdq.edgeone.app/"><span class="sq"></span>swastik.bhat</a>
+    <nav>
+      <a>Work</a>
+      <a>Research</a>
+      <a class="cta">Contact</a>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <div class="label">AI / ML engineer &amp; researcher</div>
+    <h1>Swastik Bhat</h1>
+    <p class="role"><b>I work where research meets shipping.</b> MS Computer Science (Machine Intelligence &amp; Cognition) at George Washington University — multi-agent systems, production backends, applied research.</p>
+  </div>
+
+  <div class="metrics">
+    <div class="m"><div class="v">TruthfulQA</div><div class="k">Matched GPT-4 baselines, no fine-tuning</div></div>
+    <div class="m"><div class="v">0.91 AUC</div><div class="k">Wind-farm fault prediction, TurboForge</div></div>
+    <div class="m"><div class="v">&minus;60%</div><div class="k">Review time cut, CodeGuardian</div></div>
+  </div>
+
+  <footer>
+    <span>&copy; 2026 Swastik Bhat</span>
+    <span>Arlington, VA</span>
+  </footer>
+</div>
+
+<script>
+/* Static, seeded render of the site's starfield — fine white dust, deterministic. */
+(function(){
+  var c = document.getElementById('bg3d');
+  var ctx = c.getContext('2d');
+  var W = c.width, H = c.height;
+  var seed = 20260813;
+  function rnd(){ seed = (seed * 16807) % 2147483647; return seed / 2147483647; }
+
+  ctx.clearRect(0, 0, W, H);
+
+  var glow = ctx.createRadialGradient(W / 2, 240, 0, W / 2, 240, 560);
+  glow.addColorStop(0, 'rgba(255,255,255,0.05)');
+  glow.addColorStop(1, 'rgba(0,0,0,0)');
+  ctx.fillStyle = glow;
+  ctx.fillRect(0, 0, W, H);
+
+  for (var i = 0; i < 700; i++){
+    var x = rnd() * W, y = rnd() * H, r = 0.6 + rnd() * 1.1;
+    var a = 0.10 + rnd() * 0.45;
+    ctx.beginPath(); ctx.arc(x, y, r, 0, 7);
+    ctx.fillStyle = 'rgba(255,255,255,' + a.toFixed(3) + ')'; ctx.fill();
+  }
+
+  for (var i = 0; i < 80; i++){
+    var x = rnd() * W, y = rnd() * H, r = 1.6 + rnd() * 1.6;
+    var a = 0.35 + rnd() * 0.5;
+    ctx.beginPath(); ctx.arc(x, y, r, 0, 7);
+    ctx.fillStyle = 'rgba(255,255,255,' + a.toFixed(3) + ')'; ctx.fill();
+  }
+})();
+</script>
+</body>
+</html>
