@@ -1,0 +1,40 @@
+name: profile-check
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: profile-check-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Validate README (assets exist, no stripped inline styles)
+        run: node scripts/check-profile.mjs
+
+      - name: Regenerate profile SVGs
+        run: node scripts/gen-profile-svgs.mjs
+
+      - name: Fail if generated assets are out of date
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            echo "::error::Generated assets are out of date. Run 'node scripts/gen-profile-svgs.mjs' locally and commit the result."
+            git --no-pager diff --stat
+            git status --porcelain
+            exit 1
+          fi
+          echo "Generated assets match the committed files."
