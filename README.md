@@ -24,6 +24,14 @@
 
 **Repos** — [scrape-heal](https://github.com/Swastikbhat-lab/scrape-heal) · [CodeGuardian](https://github.com/Swastikbhat-lab/CodeGuardian) · [TurboForge](https://github.com/Swastikbhat-lab/TurboForge) · GridIQ
 
+## Open source
+
+<div align="center">
+
+<img src="assets/opensource-v1.svg" alt="Open source — merged PR into gunicorn, shipping in 26.1.0" width="100%">
+
+</div>
+
 ## Tech stack
 
 **Languages** — ![Python](assets/badge-python.svg) ![Java](assets/badge-java.svg) ![TypeScript](assets/badge-typescript.svg) ![C++](assets/badge-cpp.svg)

@@ -233,6 +233,20 @@ const stats = session({
 });
 writeFileSync(resolve(assets, 'stats-v3.svg'), stats.svg);
 
+// ---- open source (merged upstream contribution) ---------------------------
+const oss = session({
+  title: 'swastik@github — ~/oss',
+  winY: 30,
+  lines: [
+    { t: 'cmd', s: '$ gh pr view benoitc/gunicorn#3685' },
+    { t: 'out', s: 'state  → merged' },
+    { t: 'out', s: 'fix    → reject chunked bodies missing the final CRLF' },
+    { t: 'out', s: 'spec   → RFC 9112 §7.1.2 · closes a request-smuggling gap' },
+    { t: 'out', s: 'ships  → gunicorn 26.1.0' },
+  ],
+});
+writeFileSync(resolve(assets, 'opensource-v1.svg'), oss.svg);
+
 // ---- badge pills (replace shields.io: it cannot do dark text on light) ------
 // Hand-rolled pills that match the light terminal — white, thin border, black
 // text, crisp 16px glyphs. Same BnW language as the rest of the profile.
@@ -351,6 +365,12 @@ const page = `<!DOCTYPE html>
   <h2>Stats — assets/stats-v3.svg (curated readout, self-hosted)</h2>
   <div class="note">real numbers that read well — account age, repos, commits, languages. No Rank C, no 0-star widget.</div>
   ${stats.svg}
+</div>
+
+<div class="card">
+  <h2>Open source — assets/opensource-v1.svg ($ gh pr view benoitc/gunicorn#3685)</h2>
+  <div class="note">merged upstream into gunicorn, shipping in 26.1.0 — same terminal, same light BnW palette.</div>
+  ${oss.svg}
 </div>
 
 <div class="card">

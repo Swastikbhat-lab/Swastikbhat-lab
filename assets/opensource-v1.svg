@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="302" viewBox="0 0 1200 302" font-family="ui-monospace,'Cascadia Mono',Consolas,'Courier New',monospace">
+  <rect width="1200" height="302" fill="#ffffff"/>
+
+  <rect x="40" y="30" width="1120" height="260" rx="14" fill="#f6f8fa" stroke="#d0d7de" stroke-width="2"/>
+  <rect x="40" y="30" width="1120" height="46" rx="14" fill="#eef1f4"/>
+  <rect x="40" y="58" width="1120" height="18" fill="#eef1f4"/>
+  <circle cx="78" cy="53" r="6.5" fill="#afb8c1"/>
+  <circle cx="99" cy="53" r="6.5" fill="#afb8c1"/>
+  <circle cx="120" cy="53" r="6.5" fill="#afb8c1"/>
+  <text x="600" y="59" text-anchor="middle" font-size="15" fill="#57606a">swastik@github — ~/oss</text>
+
+  <text x="70" y="116" font-size="18" fill="#57606a">$ gh pr view benoitc/gunicorn#3685</text>
+  <text x="70" y="146" font-size="18" fill="#1f2328">state  → merged</text>
+  <text x="70" y="176" font-size="18" fill="#1f2328">fix    → reject chunked bodies missing the final CRLF</text>
+  <text x="70" y="206" font-size="18" fill="#1f2328">spec   → RFC 9112 §7.1.2 · closes a request-smuggling gap</text>
+  <text x="70" y="236" font-size="18" fill="#1f2328">ships  → gunicorn 26.1.0</text>
+
+  <rect x="70" y="260" width="10" height="20" fill="#1f2328">
+    <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
+  </rect>
+</svg>
